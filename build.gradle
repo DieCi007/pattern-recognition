@@ -4,6 +4,10 @@ plugins {
 	id 'java'
 }
 
+ext {
+	lombokVersion = '1.18.22'
+}
+
 group = 'com.welld'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
@@ -15,6 +19,13 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// Lombok
+	compileOnly "org.projectlombok:lombok:${lombokVersion}"
+	annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+	testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
+	testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
 }
 
 tasks.named('test') {
