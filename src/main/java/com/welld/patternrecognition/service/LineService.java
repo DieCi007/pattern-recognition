@@ -1,7 +1,8 @@
-package com.welld.patternrecognition.repository;
+package com.welld.patternrecognition.service;
 
 import com.welld.patternrecognition.entity.Point;
 import com.welld.patternrecognition.exception.InvalidPointNumberException;
+import com.welld.patternrecognition.repository.PointRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

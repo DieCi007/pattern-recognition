@@ -22,10 +22,13 @@ class PointRepositoryTest {
     }
 
     @Test
-    void save_shouldNot_addPointTwice() {
+    void delete_should_removePoints() {
         repository.save(Point.builder().x(1D).y(2D).build());
         repository.save(Point.builder().x(2D).y(3D).build());
         repository.save(Point.builder().x(1D).y(2D).build());
-        assertEquals(2, repository.findAll().size());
+        repository.deleteAll();
+        assertEquals(0, repository.findAll().size());
     }
+
+
 }

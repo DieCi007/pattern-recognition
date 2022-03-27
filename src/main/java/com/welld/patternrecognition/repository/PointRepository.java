@@ -25,4 +25,8 @@ public class PointRepository {
     public List<Point> findAll() {
         return this.points;
     }
+
+    public void deleteAll() {
+        points.clear();
+    }
 }

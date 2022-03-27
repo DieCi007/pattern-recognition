@@ -1,7 +1,7 @@
 package com.welld.patternrecognition.feature.line;
 
 import com.welld.patternrecognition.entity.Point;
-import com.welld.patternrecognition.repository.LineService;
+import com.welld.patternrecognition.service.LineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
