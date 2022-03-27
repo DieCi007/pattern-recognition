@@ -3,27 +3,26 @@ package com.welld.patternrecognition.repository;
 import com.welld.patternrecognition.entity.Point;
 import com.welld.patternrecognition.utils.PointFixture;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 public class PointRepository {
-    private HashSet<Point> points;
+    private final ArrayList<Point> points;
 
     public PointRepository(
             @Value("${com.welld.patternrecognition.default-set}") boolean hasDefaultValues
     ) {
-        this.points = hasDefaultValues ? PointFixture.getDefaultPoints() : new HashSet<>();
+        this.points = hasDefaultValues ? PointFixture.getDefaultPoints() : new ArrayList<>();
     }
 
     public void save(Point point) {
         points.add(point);
     }
 
-    public Set<Point> findAll() {
+    public List<Point> findAll() {
         return this.points;
     }
 }
